@@ -1,6 +1,6 @@
 # 成都行业问题模型回答快照 · B01–B06
 
-**English abstract.** This dataset contains 1,686 saved model answers to 234 author-designed questions across six Chengdu-related batches collected between September 29 and October 16, 2026. It preserves question wording, within-batch repetitions, model identifiers, timestamps, search observations and source order, with entity names pseudonymized. Public scripts reproduce the published B01 counts. Each batch is a single-day snapshot; these records are model outputs and do not establish rankings, factual accuracy or commercial performance. Data: CC BY 4.0. Code: MIT.
+**English abstract.** This dataset contains 1,686 saved model answers to 234 author-designed questions across six Chengdu-related batches collected between September 29 and October 16, 2026. It preserves question wording, within-batch repetitions, model identifiers, timestamps, search observations and source order, with entity names pseudonymized and street-number-level addresses masked to district/street level. Public scripts reproduce the published B01 counts. Each batch is a single-day snapshot; these records are model outputs and do not establish rankings, factual accuracy or commercial performance. Data: CC BY 4.0. Code: MIT.
 
 作者为王涛（Taomir），ORCID：[0009-0004-5104-1811](https://orcid.org/0009-0004-5104-1811)。本包只包含 B01–B06；这是已有采样记录的本机整理版，构建日为 2026-10-22。公开内容包含题集、代号化后的回答、来源域名与标题、复算代码和摘要承诺。未包含原始 API 请求、完整响应、请求头、账号、请求标识或私有代号表。
 
@@ -64,6 +64,8 @@
 
 保留地名、媒体和平台、政府机构及通用词。按作者确认的实体语境验收，短写法出现在地名、媒体名称或普通表达中时保留。人名和联系方式使用对应中文占位符。网址只保留域名，路径、参数和子域名均不公开。**代号化用于避免直接点名，不保证不可识别**；区位、地址、产品描述及题目上下文仍可能让读者识别实体。
 
+门牌地址已隐去到区/街道级：回答正文和来源标题中的门牌号、附号、楼栋、单元、楼层、房号及紧随门牌的写字楼、商场名称统一替换为 `〔门牌已隐去〕`，区、街道和路名保留；地铁线路、证照文号和楼盘规划层数等非地址数字不处理。该规则在 `scripts/anonymize.py` 中于代号化之后确定性执行。
+
 仅 `data/B01/public-names.csv` 公开 14 个已在原文章中点名的项目与代号的关系，并保存文章正则命中的写法字母、代号集合及冻结期望值。其余对应关系保存在公开目录之外。
 
 公开复算只需 Python 3.11 或更新版本，无第三方依赖、无网络调用。在本目录运行：
@@ -87,12 +89,12 @@ python3 -B scripts/validate.py
 
 `proofs/archive-20261015-r2.sha256` 保存原归档文件摘要；`.ots` 是原凭据的副本，并仅对副本做了升级。原归档内容不包含在本包。升级副本包含 Bitcoin 区块头证明；升级成功与独立验证区块头是两件事，本机构建未声称已经完成独立链验证。
 
-每份私有代号表首行含 32 字节随机盐；文件整体的 SHA-256 写入 `proofs/code-table-commitments.csv`。发布文件的摘要清单为 `proofs/release-sha256.txt`，按相对路径排序，排除 Git 元数据、该清单自身及它的 `.ots`，避免自引用。清单的 `.ots` 为本次提交回执，Bitcoin 确认状态应另行核对。
+每份私有代号表首行含 32 字节随机盐；文件整体的 SHA-256 写入 `proofs/code-table-commitments.csv`。发布文件的摘要清单为 `proofs/release-sha256.txt`，按相对路径排序，排除 Git 元数据、该清单自身及它的 `.ots`，避免自引用。2026-10-28 隐去门牌后清单已重算，旧时间戳回执对不上新清单，已改名为 `proofs/release-sha256.txt.old.ots` 保留（它对应的是改动前的清单，不能用来证明当前文件）；当前清单的 `.ots` 尚待重新联网盖章，盖章前本包不含当前清单的时间戳回执。
 
 ```bash
 shasum -a 256 -c proofs/release-sha256.txt
 ots info proofs/archive-20261015-r2.ots
-ots info proofs/release-sha256.txt.ots
+# 重新盖章后再运行：ots info proofs/release-sha256.txt.ots
 ```
 
 公开数据由 `scripts/anonymize.py`、原始数据和固定私有代号表确定性生成。尽调时可向第三方出示原始文件、私有路径配置、代号表、已有清单及原归档；对方可重跑下列命令，逐字节核对导出文件、盐表承诺、raw 根和 10-15 的归档凭据。路径配置逐批提供 `path`、`default_platform`、公开名称与根摘要等字段，配置本身不公开。

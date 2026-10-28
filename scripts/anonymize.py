@@ -335,6 +335,56 @@ def make_transform(table):
     return text, domain
 
 
+# --- 2026-10-28 release fix: street numbers, buildings and floors are masked
+# to road / street level (after entity coding), plus three residual aliases.
+CN='\u4e00-\u9fa5'
+SEG=r'(?:[\u4e00-\u9fa5]{0,2}?段)'
+ROAD=rf'(?:[{CN}A-Za-z0-9]{{1,12}}?(?:大道|路|大街|街|巷|道|沿街|里|村[一二三四五六七八九十\d]+组|组){SEG}?)'
+NUM=r'(?:\d+(?:[-‑—]\d+)?号(?:院)?(?:附\d+号)?)'
+BLD=rf'(?:[{CN}A-Za-z0-9 ]{{0,8}}?(?:大厦|中心|国际广场|国际|广场|芙蓉园|智汇园|金座|第一城|商场|百货|SOHO ?|时代\d+号|号楼))'
+UNITC=r'(?:[A-Za-z]?\d*[A-Za-z\d一二三四五六七八九十]*[栋座幢]|\d+单元|[\d一二三四五六七八九十]+(?:层|楼|F)|附?[A-Za-z]?[\d‑-]{2,}(?:室|号)?|[A-Z]\d|\d+号楼|\d+号)'
+TAIL=rf'(?:(?:〔[A-Z]\d\d-[^〕]+〕)?(?:{BLD})?(?:{UNITC})*)'
+ADDR=re.compile(rf'({ROAD})({NUM})({TAIL})')
+UNIT=re.compile(rf'(?:{UNITC})+')
+PH='〔门牌已隐去〕'
+BEFORE=re.compile(rf'(〔[A-Z]\d\d-E\d+-[a-z]〕|{PH}|大厦|中心|国际|广场|商场|百货|SOHO ?|第一城|[A-Z]区|园区?)$')
+STRONG=re.compile(r'(?:[\d一二三四五六七八九十]+号(?:办公)?楼\s?\d{2,4}(?:层|楼|室)?(?:\d+号)?|\d+[栋幢]\d+单元(?:\d+[层楼])?(?:\d+号?)?|同栋楼\d+层\d+号)')
+def mask_address(text,log=None):
+    log=[] if log is None else log
+    def a(m):
+        road,num,tail=m.groups()
+        if re.search(r'认字|文号',text[max(0,m.start()-8):m.start()+len(road)]): return m.group(0)
+        codes=''.join(re.findall(r'〔[A-Z]\d\d-[^〕]+〕',tail))
+        new=road+PH+codes; log.append((m.group(0),new)); return new
+    text=ADDR.sub(a,text)
+    def u(m):
+        g=m.group(0)
+        if not re.search(r'[栋座幢层楼F室单元]',g) : return g
+        ctx=text[max(0,m.start()-12):m.start()]
+        if BEFORE.search(ctx):
+            log.append((ctx+'|'+g,PH)); return PH
+        return g
+    text=UNIT.sub(u,text)
+    def st(m): log.append((m.group(0),PH)); return PH
+    text=STRONG.sub(st,text)
+    text=re.sub(re.escape(PH)+r'(?:[、，]\d+号)+',lambda m:(log.append((m.group(0),PH)),PH)[1],text)
+    return re.sub(f'(?:{re.escape(PH)})+',PH,text)
+
+LATE_ALIASES = {
+    'B03': [('婚前 MV 双影像', '〔B03-E350-a〕'), ('婚前MV双影像', '〔B03-E350-b〕')],
+}
+LATE_TITLE_ALIASES = {
+    'B02': [('Vendas e Cobrança', '〔B02-E609-a〕')],
+}
+
+
+def finish_text(value, batch_id, title=False):
+    value = mask_address(value)
+    for old, new in (LATE_TITLE_ALIASES if title else LATE_ALIASES).get(batch_id, []):
+        value = value.replace(old, new)
+    return value
+
+
 def csv_bytes(rows, fieldnames):
     out = io.StringIO(newline='')
     writer = csv.DictWriter(out, fieldnames=fieldnames, lineterminator='\n')
@@ -359,8 +409,8 @@ def export(sources, tables, output):
             q['是否点名题'] = str(q['是否点名题']).lower()
         (destination / 'questions.csv').write_bytes(csv_bytes(questions, ['question_id', '题型或分类', 'question_text', '是否点名题']))
         for row in records:
-            row['answer_text'] = transform(row['answer_text'])
-            row['sources'] = [{'order': s['order'], 'url': domain(s['url']), 'title': transform(s['title']),
+            row['answer_text'] = finish_text(transform(row['answer_text']), bid)
+            row['sources'] = [{'order': s['order'], 'url': domain(s['url']), 'title': finish_text(transform(s['title']), bid, title=True) if s['title'] else transform(s['title']),
                                'kind': s['kind'], 'published_at': s['published_at']}
                               for s in row['sources']]
         (destination / 'answers.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) + '\n' for r in records), encoding='utf-8')
