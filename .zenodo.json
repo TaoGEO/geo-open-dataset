@@ -19,8 +19,8 @@
   ],
   "access_right": "open",
   "license": "cc-by-4.0",
-  "version": "1.0.0",
-  "publication_date": "2026-10-22",
+  "version": "1.0.1",
+  "publication_date": "2026-10-28",
   "language": "zho",
   "related_identifiers": [
     {
@@ -28,6 +28,12 @@
       "relation": "isSupplementTo",
       "scheme": "url",
       "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://github.com/TaoGEO/geo-open-dataset/tree/v1.0.1",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
     }
   ],
   "notes": "作者本人提供 GEO 诊断服务。版本与发布日期由作者在正式发布时核对；本机准备元数据不代表已发布或已取得 DOI。"

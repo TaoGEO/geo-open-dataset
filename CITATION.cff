@@ -11,6 +11,10 @@ abstract: >-
   采样日期为 2026-09-29 至 2026-10-16。实体代号化，保留批内重复、
   联网观测字段及来源顺序，提供 B01 文章数字复算脚本与摘要凭据。
 license: CC-BY-4.0
+version: "1.0.1"
+date-released: "2026-10-28"
+repository-code: "https://github.com/TaoGEO/geo-open-dataset"
+url: "https://github.com/TaoGEO/geo-open-dataset"
 keywords:
   - model answers
   - question wording
