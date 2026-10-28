@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "使用或改编本数据时，请引用王涛（Taomir），注明批次与数据变更。"
+type: dataset
+title: "成都行业问题模型回答快照（B01–B06）"
+authors:
+  - family-names: "王"
+    given-names: "涛 (Taomir)"
+    orcid: "https://orcid.org/0009-0004-5104-1811"
+abstract: >-
+  六批成都行业观察题集的已保存模型回答，共 234 道题、1686 条回答。
+  采样日期为 2026-09-29 至 2026-10-16。实体代号化，保留批内重复、
+  联网观测字段及来源顺序，提供 B01 文章数字复算脚本与摘要凭据。
+license: CC-BY-4.0
+keywords:
+  - model answers
+  - question wording
+  - Chengdu
+  - reproducibility

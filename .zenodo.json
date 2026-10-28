@@ -1,0 +1,34 @@
+{
+  "title": "成都行业问题模型回答快照（B01–B06）：题集、重复回答与来源记录",
+  "upload_type": "dataset",
+  "creators": [
+    {
+      "name": "王涛 (Taomir)",
+      "orcid": "0009-0004-5104-1811"
+    }
+  ],
+  "description": "<p>本数据集整理了 2026-09-29 至 2026-10-16 采集的 6 批成都行业问题模型回答，包含 234 道题与 1686 条有效回答。保留题面、批内重复、平台和模型标识、采样时间、联网请求与观测字段、回答文本及来源顺序，并提供 B01 已发表文章数字的公开复算脚本。</p><p>实体采用批次内代号；B01 的已公开项目对应关系另表列出。代号化不保证不可识别，区位和文本语境仍可能帮助识别对象。记录是保存下来的模型输出，不证明回答事实正确、品牌排名、商业表现或因果效果。</p><p>sources 逐项区分结构化引用（citation）与搜索结果（search_result），保留原顺序和重复项。published_at 仅保留原来源项已保存的页面日期，缺失为 null。URL 仅保留可注册域名，不能恢复逐页去重或原主机名口径。各批为单日快照，批内重复不代表跨日稳定性。数据与数据说明采用 CC BY 4.0，scripts/ 中代码按包内 LICENSE 采用 MIT；第三方材料权利归原权利人。</p>",
+  "keywords": [
+    "GEO 效果测量",
+    "生成式搜索",
+    "模型回答",
+    "题目措辞",
+    "批内重复",
+    "可复算",
+    "成都"
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "version": "1.0.0",
+  "publication_date": "2026-10-22",
+  "language": "zho",
+  "related_identifiers": [
+    {
+      "identifier": "https://taomir.cn/articles/doubao-chengdu-property-query-variation/",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "publication-article"
+    }
+  ],
+  "notes": "作者本人提供 GEO 诊断服务。版本与发布日期由作者在正式发布时核对；本机准备元数据不代表已发布或已取得 DOI。"
+}

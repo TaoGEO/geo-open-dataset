@@ -1,0 +1,7 @@
+batch_id,raw_root_sha256,scope,manifest_file_mismatches,manifest_raw_root_matches
+B01,ba8145515d739fff8145c75cef38360674e4f58f3fe8200c1ded2e5811dd570a,two original input files; relative basenames sorted,,
+B02,c29d426923ee33971872a00458c7cdb1772d25549731e82ff718b44b9753e28c,raw entries of saved manifest,0,True
+B03,87ee960d8bbc23e852b0b39aacd008b5e43dd0661b28805f11ed5ee55496c3e1,raw entries of saved manifest,348,True
+B04,eea668e8dbae75aee87d5c8504935851026b5acea1b3eae9b78e19bc647b0d33,raw inventory calculated privately; no saved manifest,,
+B05,5ec6ac7059a42713ad3350c54e422666fb881975b328401d4282c2bed830f0ae,raw entries of saved manifest,0,True
+B06,cd4e2996b4ac51584d0e626337871aa47e18af3a227b27073023c446eec5c237,raw entries of saved manifest,0,True

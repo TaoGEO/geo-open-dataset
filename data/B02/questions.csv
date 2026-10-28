@@ -1,0 +1,41 @@
+question_id,题型或分类,question_text,是否点名题
+L01,local_implementation,成都的小型商贸公司准备上进销存系统，有哪些能上门演示、实施和培训的服务商值得比较？,false
+L02,local_implementation,成都批发公司要把现有表格里的商品、客户和库存迁入新系统，有哪些本地实施服务商可以考虑？,false
+L03,local_implementation,成都商贸公司有多个仓库，需要把仓库扫码和业务员手机开单一起落地，有哪些本地服务商值得找？,false
+L04,local_implementation,成都食品批发公司要上线带批次和保质期管理的进销存，有哪些熟悉这类业务的本地实施服务商？,false
+L05,local_implementation,成都商贸公司已有财务系统，想实施进销存并打通两边的数据，有哪些本地软件服务商值得比较？,false
+L06,local_implementation,成都商贸公司买软件时，希望后续有人能到现场处理库存、开单和对账问题，有哪些提供本地售后服务的公司可以考虑？,false
+P01,product_general,小型商贸公司第一次买进销存软件，哪些产品值得比较？,false
+P02,product_general,一家十个人左右的批发公司，想把采购、销售、库存和应收应付放在一个系统里，有哪些合适的软件？,false
+P03,product_general,刚起步的批发生意，只有一个仓库，想用简单、费用低的进销存软件，有哪些选择？,false
+P04,product_general,中小商贸企业想让进销存和财务账衔接起来，有哪些业财一体的软件值得考虑？,false
+P05,product_general,给经销商供货的商贸公司，适合用哪些轻量 ERP？,false
+P06,product_general,家里经营的批发店准备告别手工记账，员工不太懂电脑，有哪些容易上手的进销存软件？,false
+P07,product_workflow,商贸公司有三个仓库，需要看各仓库存、做调拨和统一盘点，哪些进销存软件比较合适？,false
+P08,product_workflow,批发业务里不同客户有不同价格，还经常赊销，哪些软件适合管理客户报价和欠款？,false
+P09,product_workflow,批发公司想看每笔订单和每种商品的成本、毛利，有哪些进销存软件值得比较？,false
+P10,product_workflow,仓库准备通过扫码完成入库、出库和盘点，有哪些适合中小商贸公司的软件？,false
+P11,product_workflow,业务员经常在外跑客户，需要手机查库存、报价和开单，哪些进销存软件比较合适？,false
+P12,product_workflow,批发公司希望客户在手机上下单，订单直接进入进销存系统，有哪些软件可以考虑？,false
+P13,product_workflow,经销商品需要按批次管理库存，还要提醒临期和过期，有哪些进销存软件值得选？,false
+P14,product_workflow,商贸公司经常分批收款、预收货款，需要追踪应收账款和到期提醒，哪些软件适合？,false
+P15,product_industry,食品饮料批发公司选进销存软件，要管批次、保质期和退换货，有哪些产品值得比较？,false
+P16,product_industry,五金建材批发生意，商品规格多、计量单位不统一，有哪些合适的进销存软件？,false
+P17,product_industry,汽配批发公司想管理配件编号、适用车型、库存和客户账款，有哪些软件值得考虑？,false
+P18,product_industry,服装鞋帽批发公司要按颜色和尺码管理库存，有哪些进销存软件比较合适？,false
+P19,product_industry,办公用品供应商主要给企业客户供货，需要按月对账和结算，有哪些软件适合？,false
+P20,product_industry,日用品经销商要管理多品牌商品、业务员和下游门店订货，有哪些轻量 ERP 值得比较？,false
+P21,product_deployment,小型商贸公司想用浏览器和手机登录，不想自己维护服务器，有哪些云进销存软件可选？,false
+P22,product_deployment,仓库网络不太稳定，希望断网时也能继续在局域网里开单，有哪些进销存软件适合？,false
+P23,product_deployment,三到五个人使用，软件订阅预算每年三千元左右，主要做采购、销售、库存和客户对账，有哪些产品值得看？,false
+P24,product_deployment,小型商贸公司更倾向买断软件、在自己的电脑上使用，有哪些进销存产品可以比较？,false
+P25,product_deployment,商贸公司希望系统部署在自己的服务器上，数据自己掌握，有哪些适合中小企业的 ERP？,false
+P26,product_deployment,同一个老板经营两家商贸公司，需要分别做账、分别管理库存，有哪些软件适合管理多个账套？,false
+P27,product_switching,批发公司一直用表格管库存，现在想导入商品、客户和期初库存，有哪些比较容易迁移的进销存软件？,false
+P28,product_switching,商贸公司原来用老式单机进销存，现在想让外地员工也能用，有哪些换系统的选择？,false
+P29,product_switching,公司已经有财务软件，只想补上进销存并对接财务数据，有哪些产品值得比较？,false
+P30,product_switching,商贸公司线上和线下都卖货，想统一订单和库存，有哪些适合中小企业的软件？,false
+P31,product_switching,公司现在的 ERP 太复杂，主要只用采购、销售、库存和对账，想换一个轻量系统，有哪些产品合适？,false
+P32,product_switching,小型批发公司没有专职 IT，希望培训负担小、能比较快开始开单，有哪些进销存软件可以考虑？,false
+P33,product_switching,选进销存软件时比较看重长期更新、售后答疑和培训支持，有哪些面向中小商贸公司的产品值得比较？,false
+P34,product_switching,商贸公司选软件时希望能完整导出商品、订单和账款数据，方便以后换系统，有哪些产品值得考虑？,false

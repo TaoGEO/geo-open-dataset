@@ -1,0 +1,627 @@
+{
+  "method": "remove Markdown links; exact published variant codes; once per answer",
+  "project_counts": {
+    "一致": 56,
+    "不一致": 0,
+    "differences": []
+  },
+  "article_numbers": {
+    "一致": 24,
+    "不一致": 0,
+    "differences": []
+  },
+  "checks": {
+    "project_counts": [
+      {
+        "check": "B01-E031/broad",
+        "actual": 24,
+        "expected": 24,
+        "match": true
+      },
+      {
+        "check": "B01-E031/all",
+        "actual": 67,
+        "expected": 67,
+        "match": true
+      },
+      {
+        "check": "B01-E031/theme_breadth",
+        "actual": 11,
+        "expected": 11,
+        "match": true
+      },
+      {
+        "check": "B01-E031/stable_questions_5_of_5",
+        "actual": 5,
+        "expected": 5,
+        "match": true
+      },
+      {
+        "check": "B01-E025/broad",
+        "actual": 7,
+        "expected": 7,
+        "match": true
+      },
+      {
+        "check": "B01-E025/all",
+        "actual": 64,
+        "expected": 64,
+        "match": true
+      },
+      {
+        "check": "B01-E025/theme_breadth",
+        "actual": 11,
+        "expected": 11,
+        "match": true
+      },
+      {
+        "check": "B01-E025/stable_questions_5_of_5",
+        "actual": 4,
+        "expected": 4,
+        "match": true
+      },
+      {
+        "check": "B01-E047/broad",
+        "actual": 12,
+        "expected": 12,
+        "match": true
+      },
+      {
+        "check": "B01-E047/all",
+        "actual": 56,
+        "expected": 56,
+        "match": true
+      },
+      {
+        "check": "B01-E047/theme_breadth",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E047/stable_questions_5_of_5",
+        "actual": 2,
+        "expected": 2,
+        "match": true
+      },
+      {
+        "check": "B01-E003/broad",
+        "actual": 20,
+        "expected": 20,
+        "match": true
+      },
+      {
+        "check": "B01-E003/all",
+        "actual": 64,
+        "expected": 64,
+        "match": true
+      },
+      {
+        "check": "B01-E003/theme_breadth",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E003/stable_questions_5_of_5",
+        "actual": 5,
+        "expected": 5,
+        "match": true
+      },
+      {
+        "check": "B01-E001/broad",
+        "actual": 12,
+        "expected": 12,
+        "match": true
+      },
+      {
+        "check": "B01-E001/all",
+        "actual": 56,
+        "expected": 56,
+        "match": true
+      },
+      {
+        "check": "B01-E001/theme_breadth",
+        "actual": 13,
+        "expected": 13,
+        "match": true
+      },
+      {
+        "check": "B01-E001/stable_questions_5_of_5",
+        "actual": 5,
+        "expected": 5,
+        "match": true
+      },
+      {
+        "check": "B01-E034/broad",
+        "actual": 24,
+        "expected": 24,
+        "match": true
+      },
+      {
+        "check": "B01-E034/all",
+        "actual": 41,
+        "expected": 41,
+        "match": true
+      },
+      {
+        "check": "B01-E034/theme_breadth",
+        "actual": 7,
+        "expected": 7,
+        "match": true
+      },
+      {
+        "check": "B01-E034/stable_questions_5_of_5",
+        "actual": 3,
+        "expected": 3,
+        "match": true
+      },
+      {
+        "check": "B01-E008/broad",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E008/all",
+        "actual": 25,
+        "expected": 25,
+        "match": true
+      },
+      {
+        "check": "B01-E008/theme_breadth",
+        "actual": 7,
+        "expected": 7,
+        "match": true
+      },
+      {
+        "check": "B01-E008/stable_questions_5_of_5",
+        "actual": 1,
+        "expected": 1,
+        "match": true
+      },
+      {
+        "check": "B01-E006/broad",
+        "actual": 11,
+        "expected": 11,
+        "match": true
+      },
+      {
+        "check": "B01-E006/all",
+        "actual": 35,
+        "expected": 35,
+        "match": true
+      },
+      {
+        "check": "B01-E006/theme_breadth",
+        "actual": 7,
+        "expected": 7,
+        "match": true
+      },
+      {
+        "check": "B01-E006/stable_questions_5_of_5",
+        "actual": 4,
+        "expected": 4,
+        "match": true
+      },
+      {
+        "check": "B01-E027/broad",
+        "actual": 5,
+        "expected": 5,
+        "match": true
+      },
+      {
+        "check": "B01-E027/all",
+        "actual": 49,
+        "expected": 49,
+        "match": true
+      },
+      {
+        "check": "B01-E027/theme_breadth",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E027/stable_questions_5_of_5",
+        "actual": 0,
+        "expected": 0,
+        "match": true
+      },
+      {
+        "check": "B01-E161/broad",
+        "actual": 1,
+        "expected": 1,
+        "match": true
+      },
+      {
+        "check": "B01-E161/all",
+        "actual": 51,
+        "expected": 51,
+        "match": true
+      },
+      {
+        "check": "B01-E161/theme_breadth",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E161/stable_questions_5_of_5",
+        "actual": 0,
+        "expected": 0,
+        "match": true
+      },
+      {
+        "check": "B01-E109/broad",
+        "actual": 2,
+        "expected": 2,
+        "match": true
+      },
+      {
+        "check": "B01-E109/all",
+        "actual": 34,
+        "expected": 34,
+        "match": true
+      },
+      {
+        "check": "B01-E109/theme_breadth",
+        "actual": 6,
+        "expected": 6,
+        "match": true
+      },
+      {
+        "check": "B01-E109/stable_questions_5_of_5",
+        "actual": 2,
+        "expected": 2,
+        "match": true
+      },
+      {
+        "check": "B01-E138/broad",
+        "actual": 4,
+        "expected": 4,
+        "match": true
+      },
+      {
+        "check": "B01-E138/all",
+        "actual": 32,
+        "expected": 32,
+        "match": true
+      },
+      {
+        "check": "B01-E138/theme_breadth",
+        "actual": 9,
+        "expected": 9,
+        "match": true
+      },
+      {
+        "check": "B01-E138/stable_questions_5_of_5",
+        "actual": 0,
+        "expected": 0,
+        "match": true
+      },
+      {
+        "check": "B01-E119/broad",
+        "actual": 1,
+        "expected": 1,
+        "match": true
+      },
+      {
+        "check": "B01-E119/all",
+        "actual": 13,
+        "expected": 13,
+        "match": true
+      },
+      {
+        "check": "B01-E119/theme_breadth",
+        "actual": 3,
+        "expected": 3,
+        "match": true
+      },
+      {
+        "check": "B01-E119/stable_questions_5_of_5",
+        "actual": 1,
+        "expected": 1,
+        "match": true
+      },
+      {
+        "check": "B01-E035/broad",
+        "actual": 23,
+        "expected": 23,
+        "match": true
+      },
+      {
+        "check": "B01-E035/all",
+        "actual": 43,
+        "expected": 43,
+        "match": true
+      },
+      {
+        "check": "B01-E035/theme_breadth",
+        "actual": 7,
+        "expected": 7,
+        "match": true
+      },
+      {
+        "check": "B01-E035/stable_questions_5_of_5",
+        "actual": 2,
+        "expected": 2,
+        "match": true
+      }
+    ],
+    "article_numbers": [
+      {
+        "check": "broad_questions",
+        "actual": 8,
+        "expected": 8,
+        "match": true
+      },
+      {
+        "check": "broad_answers",
+        "actual": 40,
+        "expected": 40,
+        "match": true
+      },
+      {
+        "check": "theme_count",
+        "actual": 16,
+        "expected": 16,
+        "match": true
+      },
+      {
+        "check": "B01-E031/broad",
+        "actual": 24,
+        "expected": 24,
+        "match": true
+      },
+      {
+        "check": "B01-E031/theme_breadth",
+        "actual": 11,
+        "expected": 11,
+        "match": true
+      },
+      {
+        "check": "B01-E025/豪宅",
+        "actual": 14,
+        "expected": 14,
+        "match": true
+      },
+      {
+        "check": "B01-E025/大平层",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E025/broad",
+        "actual": 7,
+        "expected": 7,
+        "match": true
+      },
+      {
+        "check": "B01-E025/Q31",
+        "actual": 5,
+        "expected": 5,
+        "match": true
+      },
+      {
+        "check": "B01-E047/Q31",
+        "actual": 5,
+        "expected": 5,
+        "match": true
+      },
+      {
+        "check": "B01-E003/broad",
+        "actual": 20,
+        "expected": 20,
+        "match": true
+      },
+      {
+        "check": "B01-E001/broad",
+        "actual": 12,
+        "expected": 12,
+        "match": true
+      },
+      {
+        "check": "B01-E001/theme_breadth",
+        "actual": 13,
+        "expected": 13,
+        "match": true
+      },
+      {
+        "check": "B01-E034/broad",
+        "actual": 24,
+        "expected": 24,
+        "match": true
+      },
+      {
+        "check": "B01-E034/theme_breadth",
+        "actual": 7,
+        "expected": 7,
+        "match": true
+      },
+      {
+        "check": "B01-E027/Q34",
+        "actual": 4,
+        "expected": 4,
+        "match": true
+      },
+      {
+        "check": "B01-E161/城南",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E161/低密洋房",
+        "actual": 10,
+        "expected": 10,
+        "match": true
+      },
+      {
+        "check": "B01-E161/broad",
+        "actual": 1,
+        "expected": 1,
+        "match": true
+      },
+      {
+        "check": "B01-E161/Q34",
+        "actual": 2,
+        "expected": 2,
+        "match": true
+      },
+      {
+        "check": "B01-E109/Q31",
+        "actual": 5,
+        "expected": 5,
+        "match": true
+      },
+      {
+        "check": "B01-E119/高新区",
+        "actual": 11,
+        "expected": 11,
+        "match": true
+      },
+      {
+        "check": "B01-E119/broad",
+        "actual": 1,
+        "expected": 1,
+        "match": true
+      },
+      {
+        "check": "B01-E035/broad",
+        "actual": 23,
+        "expected": 23,
+        "match": true
+      }
+    ]
+  },
+  "results": [
+    {
+      "entity": "B01-E031",
+      "metrics": {
+        "broad": 24,
+        "all": 67,
+        "theme_breadth": 11,
+        "stable_questions_5_of_5": 5
+      }
+    },
+    {
+      "entity": "B01-E025",
+      "metrics": {
+        "broad": 7,
+        "all": 64,
+        "theme_breadth": 11,
+        "stable_questions_5_of_5": 4
+      }
+    },
+    {
+      "entity": "B01-E047",
+      "metrics": {
+        "broad": 12,
+        "all": 56,
+        "theme_breadth": 10,
+        "stable_questions_5_of_5": 2
+      }
+    },
+    {
+      "entity": "B01-E003",
+      "metrics": {
+        "broad": 20,
+        "all": 64,
+        "theme_breadth": 10,
+        "stable_questions_5_of_5": 5
+      }
+    },
+    {
+      "entity": "B01-E001",
+      "metrics": {
+        "broad": 12,
+        "all": 56,
+        "theme_breadth": 13,
+        "stable_questions_5_of_5": 5
+      }
+    },
+    {
+      "entity": "B01-E034",
+      "metrics": {
+        "broad": 24,
+        "all": 41,
+        "theme_breadth": 7,
+        "stable_questions_5_of_5": 3
+      }
+    },
+    {
+      "entity": "B01-E008",
+      "metrics": {
+        "broad": 10,
+        "all": 25,
+        "theme_breadth": 7,
+        "stable_questions_5_of_5": 1
+      }
+    },
+    {
+      "entity": "B01-E006",
+      "metrics": {
+        "broad": 11,
+        "all": 35,
+        "theme_breadth": 7,
+        "stable_questions_5_of_5": 4
+      }
+    },
+    {
+      "entity": "B01-E027",
+      "metrics": {
+        "broad": 5,
+        "all": 49,
+        "theme_breadth": 10,
+        "stable_questions_5_of_5": 0
+      }
+    },
+    {
+      "entity": "B01-E161",
+      "metrics": {
+        "broad": 1,
+        "all": 51,
+        "theme_breadth": 10,
+        "stable_questions_5_of_5": 0
+      }
+    },
+    {
+      "entity": "B01-E109",
+      "metrics": {
+        "broad": 2,
+        "all": 34,
+        "theme_breadth": 6,
+        "stable_questions_5_of_5": 2
+      }
+    },
+    {
+      "entity": "B01-E138",
+      "metrics": {
+        "broad": 4,
+        "all": 32,
+        "theme_breadth": 9,
+        "stable_questions_5_of_5": 0
+      }
+    },
+    {
+      "entity": "B01-E119",
+      "metrics": {
+        "broad": 1,
+        "all": 13,
+        "theme_breadth": 3,
+        "stable_questions_5_of_5": 1
+      }
+    },
+    {
+      "entity": "B01-E035",
+      "metrics": {
+        "broad": 23,
+        "all": 43,
+        "theme_breadth": 7,
+        "stable_questions_5_of_5": 2
+      }
+    }
+  ]
+}
