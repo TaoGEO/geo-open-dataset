@@ -89,7 +89,7 @@ python3 -B scripts/validate.py
 
 `proofs/archive-20261015-r2.sha256` 保存原归档文件摘要；`.ots` 是原凭据的副本，并仅对副本做了升级。原归档内容不包含在本包。升级副本包含 Bitcoin 区块头证明；升级成功与独立验证区块头是两件事，本机构建未声称已经完成独立链验证。
 
-每份私有代号表首行含 32 字节随机盐；文件整体的 SHA-256 写入 `proofs/code-table-commitments.csv`。发布文件的摘要清单为 `proofs/release-sha256.txt`，按相对路径排序，排除 Git 元数据、该清单自身及它的 `.ots`，避免自引用。2026-10-28 隐去门牌后清单已重算，旧时间戳回执对不上新清单，已改名为 `proofs/release-sha256.txt.old.ots` 保留（它对应的是改动前的清单，不能用来证明当前文件）；当前清单的 `.ots` 尚待重新联网盖章，盖章前本包不含当前清单的时间戳回执。
+每份私有代号表首行含 32 字节随机盐；文件整体的 SHA-256 写入 `proofs/code-table-commitments.csv`。发布文件的摘要清单为 `proofs/release-sha256.txt`，按相对路径排序，排除 Git 元数据、该清单自身及它的 `.ots`，避免自引用。2026-10-28 隐去门牌后清单已重算，旧时间戳回执对不上新清单，已改名为 `proofs/release-sha256.txt.old.ots` 保留（它对应的是改动前的清单，不能用来证明当前文件）；当前清单 `proofs/release-sha256.txt` 已于 2026-10-28 提交 OpenTimestamps 公开日历服务器，回执为 `proofs/release-sha256.txt.ots`，状态为待比特币区块确认（pending），尚未在比特币上确认；确认后可用 `ots upgrade proofs/release-sha256.txt.ots` 升级。旧清单的回执保留为 `proofs/release-sha256.txt.old.ots`（及 `proofs/release-sha256.txt.old2.ots`），仅作历史参照，与当前清单不对应。
 
 ```bash
 shasum -a 256 -c proofs/release-sha256.txt
