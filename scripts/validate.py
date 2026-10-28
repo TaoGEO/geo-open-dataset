@@ -13,6 +13,9 @@ from anonymize import CONTACT_PATTERNS, URL, entity_context, load_table, registe
 FIELDS = {'batch_id','record_id','question_id','platform','model','sampled_at','round',
           'web_search_requested','web_search_observed','answer_text','sources','status','finish_reason'}
 
+README_AUTHOR_ANCHOR = 'ORCID：[0009-0004-5104-1811](https://orcid.org/0009-0004-5104-1811)。'
+README_AUTHOR_CONTACT = README_AUTHOR_ANCHOR + '公开联系方式：微信号 ' + 'Taomir' + '。'  # split so this file is not itself a hit
+
 
 def public_files(root):
     return sorted(p for p in root.rglob('*') if p.is_file() and '.git' not in p.relative_to(root).parts
@@ -78,6 +81,10 @@ def validate(root, tables=None):
         text = path.read_text(encoding='utf-8')
         # SHA-256 commitments can contain digit runs; they are not contacts.
         contact_text = re.sub(r'(?<![A-Za-z0-9])[a-fA-F0-9]{64}(?![A-Za-z0-9])', '', text)
+        # Sole exception: the author's own authorized WeChat ID, exactly once, right after
+        # the ORCID in README.md. Any other contact text anywhere is still counted.
+        if path == root / 'README.md':
+            contact_text = contact_text.replace(README_AUTHOR_CONTACT, README_AUTHOR_ANCHOR, 1)
         n = sum(len(re.findall(rule,contact_text)) for _,rule in CONTACT_PATTERNS)
         residue['contacts'] += n
         token_hits = sum(len(re.findall(re.escape(token),text,re.I)) for token in sensitive)

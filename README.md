@@ -2,7 +2,7 @@
 
 **English abstract.** This dataset contains 1,686 saved model answers to 234 author-designed questions across six Chengdu-related batches collected between September 29 and October 16, 2026. It preserves question wording, within-batch repetitions, model identifiers, timestamps, search observations and source order, with entity names pseudonymized and street-number-level addresses masked to district/street level. Public scripts reproduce the published B01 counts. Each batch is a single-day snapshot; these records are model outputs and do not establish rankings, factual accuracy or commercial performance. Data: CC BY 4.0. Code: MIT.
 
-作者为王涛（Taomir），ORCID：[0009-0004-5104-1811](https://orcid.org/0009-0004-5104-1811)。本包只包含 B01–B06；这是已有采样记录的本机整理版，构建日为 2026-10-22。公开内容包含题集、代号化后的回答、来源域名与标题、复算代码和摘要承诺。未包含原始 API 请求、完整响应、请求头、账号、请求标识或私有代号表。
+作者为王涛（Taomir），ORCID：[0009-0004-5104-1811](https://orcid.org/0009-0004-5104-1811)。公开联系方式：微信号 Taomir。本包只包含 B01–B06；这是已有采样记录的本机整理版，构建日为 2026-10-22。公开内容包含题集、代号化后的回答、来源域名与标题、复算代码和摘要承诺。未包含原始 API 请求、完整响应、请求头、账号、请求标识或私有代号表。
 
 ## 批次与模型
 
@@ -75,7 +75,7 @@ python3 -B scripts/recompute_b01.py
 python3 -B scripts/validate.py
 ```
 
-未提供私有代号表时，品牌与已知人名的残留检查显示 null，表示未检查；结构、条数、联系方式、敏感标记和发布清单检查仍可在公开包上运行。
+未提供私有代号表时，品牌与已知人名的残留检查显示 null，表示未检查；结构、条数、联系方式、敏感标记和发布清单检查仍可在公开包上运行。联系方式检查仅有一个例外：README 作者信息中紧跟 ORCID 的那一句作者微信公开联系方式（作者授权公开）会被放行，其他位置和文件中的联系方式仍会报错。
 
 复算沿用原口径：先移除正文中的 Markdown 链接，再按原文章正则对应的写法代号计数，一份回答最多计 1 次。新增的其他简称不会混入文章计数。结果为汇总指标 **一致 56 / 不一致 0**，文章数字 **一致 24 / 不一致 0**；逐项结果在 `proofs/recompute-b01.json`。包含于长名称的原正则命中仍按原口径计数，没有为匹配期望值修改题集、回答或文章。
 
@@ -89,7 +89,7 @@ python3 -B scripts/validate.py
 
 `proofs/archive-20261015-r2.sha256` 保存原归档文件摘要；`.ots` 是原凭据的副本，并仅对副本做了升级。原归档内容不包含在本包。升级副本包含 Bitcoin 区块头证明；升级成功与独立验证区块头是两件事，本机构建未声称已经完成独立链验证。
 
-每份私有代号表首行含 32 字节随机盐；文件整体的 SHA-256 写入 `proofs/code-table-commitments.csv`。发布文件的摘要清单为 `proofs/release-sha256.txt`，按相对路径排序，排除 Git 元数据、该清单自身及它的 `.ots`，避免自引用。2026-10-28 隐去门牌后清单已重算，旧时间戳回执对不上新清单，已改名为 `proofs/release-sha256.txt.old.ots` 保留（它对应的是改动前的清单，不能用来证明当前文件）；当前清单 `proofs/release-sha256.txt` 已于 2026-10-28 提交 OpenTimestamps 公开日历服务器，回执为 `proofs/release-sha256.txt.ots`，状态为待比特币区块确认（pending），尚未在比特币上确认；确认后可用 `ots upgrade proofs/release-sha256.txt.ots` 升级。旧清单的回执保留为 `proofs/release-sha256.txt.old.ots`（及 `proofs/release-sha256.txt.old2.ots`），仅作历史参照，与当前清单不对应。
+每份私有代号表首行含 32 字节随机盐；文件整体的 SHA-256 写入 `proofs/code-table-commitments.csv`。发布文件的摘要清单为 `proofs/release-sha256.txt`，按相对路径排序，排除 Git 元数据、该清单自身及它的 `.ots`，避免自引用。2026-10-28 隐去门牌后清单已重算，旧时间戳回执对不上新清单，已改名为 `proofs/release-sha256.txt.old.ots` 保留（它对应的是改动前的清单，不能用来证明当前文件）；当前清单 `proofs/release-sha256.txt` 已于 2026-10-28 提交 OpenTimestamps 公开日历服务器，回执为 `proofs/release-sha256.txt.ots`，状态为待比特币区块确认（pending），尚未在比特币上确认；确认后可用 `ots upgrade proofs/release-sha256.txt.ots` 升级。旧清单的回执保留为 `proofs/release-sha256.txt.old.ots`（及 `proofs/release-sha256.txt.old2.ots`、`proofs/release-sha256.txt.old3.ots`），仅作历史参照，与当前清单不对应。
 
 ```bash
 shasum -a 256 -c proofs/release-sha256.txt
